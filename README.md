@@ -36,3 +36,8 @@ The purpose of the assignment is to write a script which does the following:
 4. Appropriately labels the data set with descriptive variable names. 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+The features_info gives an overview of the variables.  In order to perform step #2, we need the mean and standard deviation of the observations.  features_info tells us this means we want variables with:
+
+* mean(): Mean value
+* std(): Standard deviation
+
