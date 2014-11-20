@@ -29,6 +29,7 @@ The subject files contain a reference to who performed the test.
 The features file contains the description of the column of the variables.  There are 561 descriptions which match up with the 561 variables in the X files.
 
 The purpose of the assignment is to write a script which does the following:
+
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set
