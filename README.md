@@ -77,3 +77,5 @@ With fBodyGyroJerkMag, we will grab the following variables for the mean and std
 2. fBodyBodyGyroJerkMag-std()
 
 Since this is not measured in three dimensions, there is only one measurement for mean and std.
+
+Note: We will not grab the meanFreq() variables points as this defined differently as: Weighted average of the frequency components to obtain a mean frequency.
