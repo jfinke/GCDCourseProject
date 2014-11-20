@@ -70,3 +70,10 @@ For example, with tBodyAcc-XYZ, we will grab the following variables for the mea
 4. tBodyAcc-std()-X
 5. tBodyAcc-std()-Y
 6. tBodyAcc-std()-Z
+
+With fBodyGyroJerkMag, we will grab the following variables for the mean and std:
+
+1. fBodyBodyGyroJerkMag-mean()
+2. fBodyBodyGyroJerkMag-std()
+
+Since this is not measured in three dimensions, there is only one measurement for mean and std.
