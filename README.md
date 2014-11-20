@@ -41,3 +41,32 @@ The features_info gives an overview of the variables.  In order to perform step 
 * mean(): Mean value
 * std(): Standard deviation
 
+In addition, there are combinations of the following variables for the mean and std:
+
+* tBodyAcc-XYZ
+* tGravityAcc-XYZ
+* tBodyAccJerk-XYZ
+* tBodyGyro-XYZ
+* tBodyGyroJerk-XYZ
+* tBodyAccMag
+* tGravityAccMag
+* tBodyAccJerkMag
+* tBodyGyroMag
+* tBodyGyroJerkMag
+* fBodyAcc-XYZ
+* fBodyAccJerk-XYZ
+* fBodyGyro-XYZ
+* fBodyAccMag
+* fBodyAccJerkMag
+* fBodyGyroMag
+* fBodyGyroJerkMag
+
+
+For example, with tBodyAcc-XYZ, we will grab the following variables for the mean and std:
+
+1. tBodyAcc-mean()-X
+2. tBodyAcc-mean()-Y
+3. tBodyAcc-mean()-Z
+4. tBodyAcc-std()-X
+5. tBodyAcc-std()-Y
+6. tBodyAcc-std()-Z
