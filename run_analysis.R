@@ -19,7 +19,7 @@ features <- read.table("features.txt", quote="\"")
 # Transform features
 headings<-features[2]
 theadings<-t(headings)
-theadings2<-as.data.frame(theadings)
 
+X <- rbind.fill(X_test, X_train) #combining the two dataframes
 
-X <- rbind.fill(theadings2,X_test, X_train) #combining the three dataframes
+colnames(X)<-theadings #assinging column names
