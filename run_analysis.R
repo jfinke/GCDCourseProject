@@ -23,3 +23,10 @@ theadings<-t(headings)
 X <- rbind.fill(X_test, X_train) #combining the two dataframes
 
 colnames(X)<-theadings #assinging column names
+
+
+# Need to get the columns that have mean() and std()
+y<-grep('mean\\(\\)|std\\(\\)',names(X))
+
+md<-X[,y]
+
