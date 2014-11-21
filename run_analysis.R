@@ -30,3 +30,11 @@ y<-grep('mean\\(\\)|std\\(\\)',names(X))
 
 ms<-X[,y] # Assigning the mean and std to a new dataframe
 
+#cleaning up column names
+mscolnames<-colnames(ms)
+tmp<-make.names(mscolnames)
+mscolnamesclean<-gsub("[.]", "",tmp)
+colnames(ms)<-mscolnamesclean
+
+
+
