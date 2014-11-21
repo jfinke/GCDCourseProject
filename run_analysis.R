@@ -10,9 +10,17 @@ library("plyr")
 
 # Load X_test data
 X_test <- read.table("X_test.txt", quote="\"")
+# Load y_test data
+y_test <- read.table("y_test.txt", quote="\"")
+# Load subject_test data
+subject_test <- read.table("subject_test.txt", quote="\"")
 
 # Load X_train data
 X_train <- read.table("X_train.txt", quote="\"")
+# Load y_train data
+y_train <- read.table("y_train.txt", quote="\"")
+# Load subject_train data
+subject_train <- read.table("subject_train.txt", quote="\"")
 
 # Load features
 features <- read.table("features.txt", quote="\"")
@@ -20,9 +28,14 @@ features <- read.table("features.txt", quote="\"")
 headings<-features[2]
 theadings<-t(headings)
 
-X <- rbind.fill(X_test, X_train) #combining the two dataframes
+X <- rbind.fill(X_test, X_train) #combining the two X dataframes
+y <- rbind.fill(y_test, y_train) #combining the two y dataframes
+s <- rbind.fill(subject_test, subject_train) #combining the two subject dataframes
 
-colnames(X)<-theadings #assinging column names
+
+colnames(X)<-theadings #assinging column names to X
+colnames(y)<-"Activities" # Assigning column name to y
+colnames(s)<-"Subject" # Assigning column name to s
 
 
 # Need to get the columns that have mean() and std()
