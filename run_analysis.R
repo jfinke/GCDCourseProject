@@ -28,5 +28,5 @@ colnames(X)<-theadings #assinging column names
 # Need to get the columns that have mean() and std()
 y<-grep('mean\\(\\)|std\\(\\)',names(X))
 
-ms<-X[,y]
+ms<-X[,y] # Assigning the mean and std to a new dataframe
 
