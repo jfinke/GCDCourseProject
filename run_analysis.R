@@ -61,7 +61,8 @@ fullactiv <- join(full, activity_labels, by = "Activities", type="left")
 fullactiv$Activities<-NULL # Removing id joining column, data should be tidy
 
 
-# Aggregating the mean per the Acitivity Name and Subject
+# Aggregating the mean per the Activity Name and Subject
+attach(fullactiv)
 final<-aggregate(fullactiv, by=list(ActivityNames,Subject), FUN=mean, na.rm=TRUE)
 
 # Cleaning up the tmp after the aggregation
@@ -70,3 +71,5 @@ final$Subject<-NULL
 colnames(final)[1]<-"Activity"
 colnames(final)[2]<-"Subject"
 
+# Reordering first two columns for my gratification
+final <- final[, c(2,1,3:68)]
