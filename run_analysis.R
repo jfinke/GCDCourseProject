@@ -60,4 +60,7 @@ full<-cbind(ms, s, y) # All of the data in a single dataframe
 fullactiv <- join(full, activity_labels, by = "Activities", type="left")
 fullactiv$Activities<-NULL # Removing id joining column, data should be tidy
 
-# Need group_by and mutate to finish the assignment
+
+# Aggregating the mean per the Acitivity Name and Subject
+tmp<-aggregate(fullactiv, by=list(ActivityNames,Subject), FUN=mean, na.rm=TRUE)
+
