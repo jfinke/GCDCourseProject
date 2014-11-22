@@ -63,4 +63,5 @@ fullactiv$Activities<-NULL # Removing id joining column, data should be tidy
 
 # Aggregating the mean per the Acitivity Name and Subject
 tmp<-aggregate(fullactiv, by=list(ActivityNames,Subject), FUN=mean, na.rm=TRUE)
-
+tmp$ActivityNames<-NULL
+tmp$Subject<-NULL
