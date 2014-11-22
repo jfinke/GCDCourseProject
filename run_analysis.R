@@ -30,6 +30,7 @@ theadings<-t(headings)
 
 # Load Activities
 activity_labels <- read.table("activity_labels.txt", quote="\"")
+colnames(activity_labels)<-c("Activities","ActivNames")
 
 
 X <- rbind.fill(X_test, X_train) #combining the two X dataframes
@@ -43,9 +44,9 @@ colnames(s)<-"Subject" # Assigning column name to s
 
 
 # Need to get the columns that have mean() and std()
-y<-grep('mean\\(\\)|std\\(\\)',names(X))
+cols<-grep('mean\\(\\)|std\\(\\)',names(X))
 
-ms<-X[,y] # Assigning the mean and std to a new dataframe
+ms<-X[,cols] # Assigning the mean and std to a new dataframe
 
 #cleaning up column names
 mscolnames<-colnames(ms)
@@ -54,4 +55,7 @@ mscolnamesclean<-gsub("[.]", "",tmp)
 colnames(ms)<-mscolnamesclean
 
 full<-cbind(ms, s, y) # All of the data in a single dataframe
+
+# Joining the Activity Names to the full dataframe
+fullactiv <- join(full, activity_labels, by = "Activities", type="left")
 
