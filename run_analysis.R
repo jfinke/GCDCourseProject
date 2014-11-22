@@ -28,6 +28,10 @@ features <- read.table("features.txt", quote="\"")
 headings<-features[2]
 theadings<-t(headings)
 
+# Load Activities
+activity_labels <- read.table("activity_labels.txt", quote="\"")
+
+
 X <- rbind.fill(X_test, X_train) #combining the two X dataframes
 y <- rbind.fill(y_test, y_train) #combining the two y dataframes
 s <- rbind.fill(subject_test, subject_train) #combining the two subject dataframes
@@ -49,5 +53,5 @@ tmp<-make.names(mscolnames)
 mscolnamesclean<-gsub("[.]", "",tmp)
 colnames(ms)<-mscolnamesclean
 
-
+full<-cbind(ms, s, y) # All of the data in a single dataframe
 
