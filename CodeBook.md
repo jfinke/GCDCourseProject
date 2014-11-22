@@ -94,6 +94,8 @@ and
 mean(): Mean value
 std(): Standard deviation
 ```
+variations of those values.  The columns descriptions have been cleaned up by eliminating "illegal characters" and extraneous characters.
 
+The variables are then cross referenced with the Activity file.
 
 
