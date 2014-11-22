@@ -58,4 +58,6 @@ full<-cbind(ms, s, y) # All of the data in a single dataframe
 
 # Joining the Activity Names to the full dataframe
 fullactiv <- join(full, activity_labels, by = "Activities", type="left")
-fullactiv$Activities<-NULL # Removing id joining column
+fullactiv$Activities<-NULL # Removing id joining column, data should be tidy
+
+# Need group_by and mutate to finish the assignment
