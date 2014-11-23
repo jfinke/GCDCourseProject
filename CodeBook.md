@@ -62,11 +62,29 @@ tBodyAccJerkMean
 tBodyGyroMean
 tBodyGyroJerkMean
 
+- 'activity_labels.txt': Links the class labels with their activity name.
+
+- 'train/X_train.txt': Training set.
+
+- 'train/y_train.txt': Training labels.
+
+- 'test/X_test.txt': Test set.
+
+- 'test/y_test.txt': Test labels.
+
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+
 ```
 
 ## New Description
 
-Output file contains the mean of the measurements by Subject and Activity of all mean() and std() measurements of the original data.  The variables are the same as described above.  In short, what is selected out of the original dataset is:
+The X_test.txt and X_train.txt are combined by a rbind.fill.
+The y_test.txt and the y_train.txt are combined by a rbind.fill.
+The subject_test.txt and the subject_train.txt are combined by a rbind.fill.
+The requested data (mean and std) are selected out of the combined X dataframe.
+
+
+What is selected out of the original dataset is:
 
 ```
 tBodyAcc-XYZ
@@ -96,6 +114,14 @@ std(): Standard deviation
 ```
 variations of those values.  The columns descriptions have been cleaned up by eliminating "illegal characters" and extraneous characters.
 
-The variables are then cross referenced with the Activity file.
+The X, y, and s dataframes are then combined with a cbind.
+
+The Activity variables are then cross referenced with the Activity file with a left outer join.
+
+The resulting dataframe is tidy by having one observation of measurement per subject per activity.
+
+The dataframe is then aggregated by subject and activity with a mean of the alinging varaiables.
+
+This results in a dataframe which has 180 observations of 68 variables, with two of the variables being subject and activity and the resulting variables being the mean value of the aggregation.
 
 
