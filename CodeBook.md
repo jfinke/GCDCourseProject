@@ -122,6 +122,6 @@ The resulting dataframe is tidy by having one observation of measurement per sub
 
 The dataframe is then aggregated by subject and activity with a mean of the alinging varaiables.
 
-This results in a dataframe which has 180 observations of 68 variables, with two of the variables being subject and activity and the resulting variables being the mean value of the aggregation.
+This results in a tidy dataframe which has 180 observations of 68 variables, with two of the variables being subject and activity and the resulting variables being the mean value of the aggregation.
 
 
